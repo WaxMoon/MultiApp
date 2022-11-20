@@ -1,0 +1,38 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlin_version = '1.5.21'
+        compose_version = '1.0.1'
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    minSdkVersion = 24
+    compileSdkVersion = 33
+    targetSdkVersion = 26
+    buildToolsVersion = "31.0.0"
+    javaVersion = JavaVersion.VERSION_1_8
+    abiFilters = "armeabi-v7a,arm64-v8a"
+    localTest = false
+    isMasterPkg = true
+    hackJarName = "hack.jar"
+    versionCode = 1
+    versionName = "1.0"
+    masterPkg = "org.waxmoon.github64"
+    assistPkg = "org.waxmoon.github32"
+}
