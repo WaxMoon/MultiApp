@@ -93,6 +93,95 @@ MultiApp日志
 11-25 17:59:13.804  8197  8197 D WaxMoon : ActivityManager(android.app.IActivityManager$Stub$Proxy@79f3e55) is proxy: false
 ```
 
+## 快速上手
+### 代码下载
+由于使用了submodule,您必须手动拉取子仓
+```shell
+git clone https://github.com/WaxMoon/MultiApp.git
+git submodule update --init
+```
+
+### 继承HackApplication
+HackApplication它会帮您完成engine的初始化
+```Java
+public class MoonApplication extends HackApplication {
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
+}
+```
+您也可以参考opensdk代码，自己进行engine的初始化。
+```Java
+public class HackApplication extends Application {
+
+    private static final boolean DEBUG = Features.DEBUG;
+    private static final String TAG = HackApplication.class.getSimpleName();
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        if (DEBUG) Log.d(TAG, "attachBaseContext start");
+        HackRuntime.install(this, "version", true);
+        Cmd.INSTANCE().exec(CmdConstants.CMD_APPLICATION_ATTACHBASE, this, base);
+        if (DEBUG) Log.d(TAG, "attachBaseContext end");
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        if (DEBUG) Log.d(TAG, "onCreate start");
+        Cmd.INSTANCE().exec(CmdConstants.CMD_APPLICATION_ONCREATE);
+        if (DEBUG) Log.d(TAG, "onCreate end");
+    }
+}
+```
+
+### 使用HackApi.installPackageFromHost安装app
+```Kotlin
+var install: (ApkInfo)->Unit = { apkInfo ->
+    val ret = HackApi.installPackageFromHost(apkInfo.pkgName, userSpace, false)
+
+    when (ret) {
+        INSTALL_SUCCEEDED ->
+            Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_success,
+                Toast.LENGTH_SHORT).show()
+        INSTALL_FAILED_ALREADY_EXISTS ->
+            Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_already_installed,
+                Toast.LENGTH_SHORT).show()
+        else ->
+            Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_fail, Toast.LENGTH_SHORT).show()
+    }
+}
+```
+
+### 使用HackApi.startActivity运行app
+
+```Kotlin
+var startApp: (ApkInfo)->Unit = { apkInfo ->
+    var intent:Intent? = null
+    if (apkInfo.sysInstalled) {
+        intent = MoonApplication.INSTANCE().packageManager.getLaunchIntentForPackage(apkInfo.pkgName)
+        intent?.addFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
+    } else {
+        Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_unsupport, Toast.LENGTH_SHORT).show()
+    }
+
+    if (intent != null) {
+        Log.d(TAG, "begin start " + apkInfo.pkgName)
+        val startRet = HackApi.startActivity(intent, userSpace)
+        if (startRet != START_SUCCESS) {
+            Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_fail, Toast.LENGTH_SHORT).show()
+        }
+    }
+}
+```
+
 ## 功能特性
 *  支持android7-android13(android7-8还在测试中，敬请谅解)
 *  支持armv7-32, armv8-64

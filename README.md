@@ -93,6 +93,95 @@ This is the log of MultiApp
 11-25 17:59:13.804  8197  8197 D WaxMoon : ActivityManager(android.app.IActivityManager$Stub$Proxy@79f3e55) is proxy: false
 ```
 
+## Quick Start
+### Download code
+Due to the use of submodule, you have to pull subrepos manually
+```shell
+git clone https://github.com/WaxMoon/MultiApp.git
+git submodule update --init
+```
+
+### extends HackApplication
+HackApplication will help you complete the initialization of the engine.
+```Java
+public class MoonApplication extends HackApplication {
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
+}
+```
+You can also refer to the opensdk code to initialize the engine yourself.
+```Java
+public class HackApplication extends Application {
+
+    private static final boolean DEBUG = Features.DEBUG;
+    private static final String TAG = HackApplication.class.getSimpleName();
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        if (DEBUG) Log.d(TAG, "attachBaseContext start");
+        HackRuntime.install(this, "version", true);
+        Cmd.INSTANCE().exec(CmdConstants.CMD_APPLICATION_ATTACHBASE, this, base);
+        if (DEBUG) Log.d(TAG, "attachBaseContext end");
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        if (DEBUG) Log.d(TAG, "onCreate start");
+        Cmd.INSTANCE().exec(CmdConstants.CMD_APPLICATION_ONCREATE);
+        if (DEBUG) Log.d(TAG, "onCreate end");
+    }
+}
+```
+
+### Use HackApi.installPackageFromHost to install app
+```Kotlin
+var install: (ApkInfo)->Unit = { apkInfo ->
+    val ret = HackApi.installPackageFromHost(apkInfo.pkgName, userSpace, false)
+
+    when (ret) {
+        INSTALL_SUCCEEDED ->
+            Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_success,
+                Toast.LENGTH_SHORT).show()
+        INSTALL_FAILED_ALREADY_EXISTS ->
+            Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_already_installed,
+                Toast.LENGTH_SHORT).show()
+        else ->
+            Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_fail, Toast.LENGTH_SHORT).show()
+    }
+}
+```
+
+### Use HackApi.startActivity to run app
+
+```Kotlin
+var startApp: (ApkInfo)->Unit = { apkInfo ->
+    var intent:Intent? = null
+    if (apkInfo.sysInstalled) {
+        intent = MoonApplication.INSTANCE().packageManager.getLaunchIntentForPackage(apkInfo.pkgName)
+        intent?.addFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
+    } else {
+        Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_unsupport, Toast.LENGTH_SHORT).show()
+    }
+
+    if (intent != null) {
+        Log.d(TAG, "begin start " + apkInfo.pkgName)
+        val startRet = HackApi.startActivity(intent, userSpace)
+        if (startRet != START_SUCCESS) {
+            Toast.makeText(MoonApplication.INSTANCE(), R.string.toast_fail, Toast.LENGTH_SHORT).show()
+        }
+    }
+}
+```
+
 ## Features
 *  support android7-android13(android7-8 is under development)
 *  support armv7-32, armv8-64
