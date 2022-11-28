@@ -15,6 +15,12 @@ In addition, we will continue to fix problems and update opensdk code to provide
 
 [Without install Google play to enjoy](https://github.com/WaxMoon/MultiApp/blob/5fc33308ca9fd651ce7be2a5bab53160d5303426/docs/res/github_gp.mp4) <----> [Multiple open facebook](https://github.com/WaxMoon/MultiApp/blob/5fc33308ca9fd651ce7be2a5bab53160d5303426/docs/res/github_fb.mp4)
 
+
+https://user-images.githubusercontent.com/118731992/204190831-4bd2c0db-6682-48d8-aa4f-1e5b5756650e.mp4
+
+
+https://user-images.githubusercontent.com/118731992/204192759-14984680-e5ed-4685-a0c7-bebff3d8a7b0.mp4
+
 <div align=center>
     <video width="320" height="320" controls>
         <source src="docs/res/github_gp.mp4" type="video/mp4">

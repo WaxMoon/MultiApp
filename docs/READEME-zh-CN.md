@@ -12,6 +12,14 @@ MultiApp是一款虚拟安卓容器，可实现app多开，该工程提供了一
 ### **您可以观看如下视频了解我们的功能**
 
 [免安装google play](https://github.com/WaxMoon/MultiApp/blob/5fc33308ca9fd651ce7be2a5bab53160d5303426/docs/res/github_gp.mp4) <----> [多开facebook](https://github.com/WaxMoon/MultiApp/blob/5fc33308ca9fd651ce7be2a5bab53160d5303426/docs/res/github_fb.mp4)
+
+
+https://user-images.githubusercontent.com/118731992/204190831-4bd2c0db-6682-48d8-aa4f-1e5b5756650e.mp4
+
+
+https://user-images.githubusercontent.com/118731992/204192759-14984680-e5ed-4685-a0c7-bebff3d8a7b0.mp4
+
+
 <div align=center>
     <video width="320" height="320" controls>
         <source src="res/github_gp.mp4" type="video/mp4">
