@@ -208,6 +208,19 @@ Both this project and opensdk use the AGPL-3.0 license. Before publishing your s
 ## Safety Notes
 From the perspective of code security and industry security, we **disabled the software debugging** function. If you have relevant legal needs, you can contact by wechat.
 
+## Others
+If you see advertisements when using the software, this is a normal phenomenon. This is our motivation to constantly maintain github. I hope you will understand.
+
 ## Contact Details
 Wechat: WaxMoon2018
 Email: cocos_sh@sina.com
+
+## Change Log
+
+1.optimize bpf/seccomp
+
+2.fix roc crash
+
+3.fix messager start timeout
+
+4.fix can't run MultiAccount-app

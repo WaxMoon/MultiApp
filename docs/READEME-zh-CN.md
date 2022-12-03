@@ -4,6 +4,10 @@
 ![](https://img.shields.io/badge/Android-7.0%20--%2013-blue.svg?style=flat)
 ![](https://img.shields.io/badge/arch-armeabi--v7a%20%7C%20arm64--v8a-blue.svg?style=flat)
 
+## 维护情况
+
+该仓库大概一星期更新一次，请留意文末的更新日志
+
 ## 项目简介
 MultiApp是一款虚拟安卓容器，可实现app多开，该工程提供了一个简易的UI供您体验，您也可以下载[官网安装包](https://play.google.com/store/apps/details?id=com.waxmoon.ma.gp)享受更流畅的体验。如果您是一个android开发者，也可以自已定制UI，您不用关注底层的实现细节，使用[opensdk](https://github.com/WaxMoon/opensdk)提供的api即可实现app多开。如果您在体验过程中有任何问题，可直接咨询微信账号。
 
@@ -28,6 +32,8 @@ https://user-images.githubusercontent.com/118731992/204192759-14984680-e5ed-4685
         <source src="res/github_fb.mp4" type="video/mp4">
     </video>
 </div>
+
+我们也支持某些传统多开软件的运行
 
 ## 方案简介
 传统的多开方案依赖于java动态代理、inline hook、代理转发等手段保证虚拟进程的正常运行。如果三方app同样使用了java动态代理，此时会存在代理相互覆盖的问题，该情况会导致三方app运行时的逻辑发生变化。逻辑‘被’发生变化是极大多数厂家不愿意看到的，可能在一定程度上影响其收益。所以从某种意义上来讲，传统方案并不能定义为容器。
@@ -210,7 +216,20 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 ## 安全须知
 出于代码安全以及行业安全的角度，我们暂时**禁用了软件调试**功能。如果您有相关的合法需求，可以通过下述方式咨询合作。
 
+## 其他申明
+如果您在使用软件的过程中看到了广告，这是正常现象，这是我们不断维护github的动力，希望大家体谅
+
 ## 联系方式
 微信账号:WaxMoon2018
 
 新浪邮箱:cocos_sh@sina.com
+
+## 维护日志
+
+1.优化bpf/seccomp
+
+2.修复文明觉醒crash
+
+3.messager耗时优化
+
+4.运行某多开软件crash
