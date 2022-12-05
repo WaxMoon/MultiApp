@@ -6,10 +6,7 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.drawable.AdaptiveIconDrawable
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -326,16 +323,13 @@ class ApkInfo constructor(val apkPath: String, val sysInstalled: Boolean) {
     }
 
     private fun getAppIconCompat(icon: Drawable) : ImageBitmap {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && icon is AdaptiveIconDrawable) {
-            val bitmap = Bitmap.createBitmap(icon.intrinsicWidth, icon.intrinsicHeight, Bitmap.Config.ARGB_8888)
-            val tmpCanvas = Canvas()
-            tmpCanvas.setBitmap(bitmap)
-            icon.setBounds(0, 0, tmpCanvas.width, tmpCanvas.height)
-            icon.draw(tmpCanvas)
-            tmpCanvas.setBitmap(null)
-            return bitmap.asImageBitmap()
-        }
-        return (icon as BitmapDrawable).bitmap.asImageBitmap()
+        val bitmap = Bitmap.createBitmap(icon.intrinsicWidth, icon.intrinsicHeight, Bitmap.Config.ARGB_8888)
+        val tmpCanvas = Canvas()
+        tmpCanvas.setBitmap(bitmap)
+        icon.setBounds(0, 0, tmpCanvas.width, tmpCanvas.height)
+        icon.draw(tmpCanvas)
+        tmpCanvas.setBitmap(null)
+        return bitmap.asImageBitmap()
     }
 
     override fun toString(): String {

@@ -217,6 +217,8 @@ Email: cocos_sh@sina.com
 
 ## Change Log
 
+### 2022/12
+
 1.optimize bpf/seccomp
 
 2.fix roc crash
@@ -224,3 +226,7 @@ Email: cocos_sh@sina.com
 3.fix messager start timeout
 
 4.fix can't run MultiAccount-app
+
+5.fix lilith-game crash
+
+6.fix bilibili crash

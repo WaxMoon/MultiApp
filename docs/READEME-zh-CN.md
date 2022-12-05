@@ -226,6 +226,8 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 
 ## 维护日志
 
+### 2022/12
+
 1.优化bpf/seccomp
 
 2.修复文明觉醒crash
@@ -233,3 +235,7 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 3.messager耗时优化
 
 4.运行某多开软件crash
+
+5.修复莉莉丝游戏崩溃
+
+6.修复B站32位崩溃
