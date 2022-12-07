@@ -230,3 +230,9 @@ Email: cocos_sh@sina.com
 5.fix lilith-game crash
 
 6.fix bilibili crash
+
+7.fix app can't login by Google(only support debuggable="false")
+
+8.support more 360shell apps
+
+9.support ijm shell app

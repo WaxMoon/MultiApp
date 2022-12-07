@@ -239,3 +239,9 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 5.修复莉莉丝游戏崩溃
 
 6.修复B站32位崩溃
+
+7.修复app不能使用Google登录(仅支持debuggable="false")
+
+8.支持更多360加固的app
+
+9.支持某些爱加密加固应用
