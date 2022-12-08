@@ -60,6 +60,25 @@ android {
             useLegacyPackaging = true
         }
     }
+    lintOptions {
+        checkReleaseBuilds true
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        textOutput "stdout"
+        textReport false
+        disable "UnusedResources", 'RestrictedApi'
+        disable 'TypographyFractions', 'TypographyQuotes'
+        enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
+        check 'NewApi', 'InlinedApi'
+    }
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+    options.encoding = "UTF-8"
 }
 
 dependencies {
