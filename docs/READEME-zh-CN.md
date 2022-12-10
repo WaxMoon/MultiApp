@@ -245,3 +245,11 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 8.支持更多360加固的app
 
 9.支持某些爱加密加固应用
+
+10.修复Google概率性无法登录
+
+11.修复友邻崩溃
+
+12.修复snapchat发送消息失败
+
+13.修复paltalk崩溃

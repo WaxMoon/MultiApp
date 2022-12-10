@@ -236,3 +236,11 @@ Email: cocos_sh@sina.com
 8.support more 360shell apps
 
 9.support ijm shell app
+
+10.fix Google play login issue
+
+11.fix youlin crash
+
+12.fix snapchat can't send msg
+
+13.fix paltalk crash
