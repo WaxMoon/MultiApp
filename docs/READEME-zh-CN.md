@@ -196,6 +196,35 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 }
 ```
 
+### 使用HackApi.registerApplicationCallback监控Application的生命周期
+
+```Java
+    private void monitorApplicationEvent() {
+        final String TAG = "EVENT";
+        HackApi.registerApplicationCallback(new HackApi.ApplicationCallback() {
+            @Override
+            public void onInitAppContext(Object loadedApk, Context appContext) {
+                Slog.d(TAG, "onInitAppContext %s %s", loadedApk, appContext);
+            }
+
+            @Override
+            public void onAttachBaseContext(Application app) {
+                Slog.d(TAG, "onAttachBaseContext %s", app);
+            }
+
+            @Override
+            public void onInstallProviders(Application app) {
+                Slog.d(TAG, "onInstallProviders %s", app);
+            }
+
+            @Override
+            public void onCreate(Application app) {
+                Slog.d(TAG, "onCreate %s", app);
+            }
+        });
+    }
+```
+
 ## 功能特性
 *  支持android7-android13(android7-8还在测试中，敬请谅解)
 *  支持armv7-32, armv8-64
@@ -253,3 +282,5 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 12.修复snapchat发送消息失败
 
 13.修复paltalk崩溃
+
+14.支持Application lifecycle callback(HackApi.registerApplicationCallback)

@@ -188,6 +188,35 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 }
 ```
 
+### Use HackApi.registerApplicationCallback to monitor Application lifecycle
+
+```Java
+    private void monitorApplicationEvent() {
+        final String TAG = "EVENT";
+        HackApi.registerApplicationCallback(new HackApi.ApplicationCallback() {
+            @Override
+            public void onInitAppContext(Object loadedApk, Context appContext) {
+                Slog.d(TAG, "onInitAppContext %s %s", loadedApk, appContext);
+            }
+
+            @Override
+            public void onAttachBaseContext(Application app) {
+                Slog.d(TAG, "onAttachBaseContext %s", app);
+            }
+
+            @Override
+            public void onInstallProviders(Application app) {
+                Slog.d(TAG, "onInstallProviders %s", app);
+            }
+
+            @Override
+            public void onCreate(Application app) {
+                Slog.d(TAG, "onCreate %s", app);
+            }
+        });
+    }
+```
+
 ## Features
 *  support android7-android13(android7-8 is under development)
 *  support armv7-32, armv8-64
@@ -244,3 +273,5 @@ Email: cocos_sh@sina.com
 12.fix snapchat can't send msg
 
 13.fix paltalk crash
+
+14.support Application lifecycle callback(HackApi.registerApplicationCallback)
