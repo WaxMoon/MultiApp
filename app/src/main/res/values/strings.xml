@@ -15,5 +15,6 @@
     <string name="toast_fail" tools:ignore="MissingTranslation">failed</string>
     <string name="toast_success" tools:ignore="MissingTranslation">success</string>
     <string name="toast_unsupport" tools:ignore="MissingTranslation">not support</string>
+    <string name="toast_assist_missing" tools:ignore="MissingTranslation">assist not install</string>
     <string name="toast_already_installed" translatable="false">already installed</string>
 </resources>

@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "GithubMultiApp"
 include ':app'
 include ':opensdk'
+include ':assist'

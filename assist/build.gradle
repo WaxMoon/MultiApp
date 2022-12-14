@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+
+
+    defaultConfig {
+        applicationId rootProject.ext.assistPkg
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+
+    buildTypes {
+        release {
+            aaptOptions {
+                ignoreAssetsPattern '!com.waxmoon.ma.gp.apk:!hack.jar'
+            }
+            signingConfig signingConfigs.debug
+            signingConfig.initWith(buildTypes.debug.signingConfig)
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    build.doLast {
+        FileTree apks = fileTree(dir: "${buildDir}" + "/outputs/apk/release", include: ['*.apk'])
+        apks.each { File file ->
+            if (file.name.endsWith("unaligned.apk")) {
+                delete file
+            } else {
+                File tmp = new File("${rootProject.rootDir}/app/src/main/assets/")
+                tmp.mkdirs()
+                println(file)
+                println(tmp)
+                copy {
+                    from file
+                    into tmp
+                    include file.name
+                    rename (file.name,"assist.apk")
+                }
+
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(path: ':opensdk')
+}

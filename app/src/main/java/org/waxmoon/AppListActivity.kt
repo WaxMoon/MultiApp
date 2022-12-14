@@ -7,11 +7,15 @@ import android.content.pm.PackageInfo
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContract
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -34,8 +38,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.core.content.FileProvider
+import com.hack.opensdk.BuildConfig
+import com.hack.opensdk.CmdConstants
 import com.hack.opensdk.HackApi
-
+import com.hack.utils.FileUtils
+import java.io.File
 class AppListActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +69,96 @@ const val MENU_OPEN_GP = 1
 
 val TAG = AppListActivity::class.simpleName
 var userSpace: Int = 0
+var dialogState = mutableStateOf(Any())
+
+
+var assistInstallRequestContract = object : ActivityResultContract<ApkInfo, ApkInfo>() {
+    var info: ApkInfo? = null
+
+    override fun parseResult(resultCode: Int, intent: Intent?): ApkInfo {
+        return info!!
+    }
+
+    override fun createIntent(context: Context, input: ApkInfo): Intent {
+        info = input
+        return Intent().apply {
+            setDataAndType(requestInstallAssist(context), "application/vnd.android.package-archive")
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION.or(Intent.FLAG_GRANT_WRITE_URI_PERMISSION))
+            action = Intent.ACTION_VIEW
+        }
+
+    }
+
+    fun requestInstallAssist(context: Context): Uri? {
+        val file = File(context.externalCacheDir, "assist.apk")
+        FileUtils.extractAsset(context, "assist.apk", file)
+        val authority = context.packageName + ":" + MoonProvider::class.qualifiedName
+        val uri = FileProvider.getUriForFile(context, authority, file)
+        return uri
+    }
+}
+
+fun isInstall(info: ApkInfo): Boolean {
+    return try {
+        MoonApplication.INSTANCE().packageManager.getPackageInfo(info.getShellPackage(), 0)
+        true
+    } catch (e: Exception) {
+        false
+    }
+}
+
+
+@Composable
+fun AssistInstallDialog() {
+    val openDialog = remember { dialogState }
+    val launcher = rememberLauncherForActivityResult(contract = assistInstallRequestContract) {
+        if (!isInstall(it)) {
+            Toast.makeText(
+                MoonApplication.INSTANCE(), R.string.toast_fail,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+    }
+    if (openDialog.value is ApkInfo) {
+        AlertDialog(
+            onDismissRequest = {
+                // Dismiss the dialog when the user clicks outside the dialog or on the back
+                // button. If you want to disable that functionality, simply use an empty
+                // onCloseRequest.
+                openDialog.value = Any()
+            },
+            title = {
+                Text(text = "Hint")
+            },
+            text = {
+                Text(
+                    "need install assist package "
+                )
+            },
+
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        launcher.launch(openDialog.value as ApkInfo)
+                        openDialog.value = Any()
+                    }
+                ) {
+                    Text("Confirm")
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = {
+                        openDialog.value = Any()
+                    }
+                ) {
+                    Text("Cancel")
+                }
+            }
+        )
+    }
+}
 
 @Composable
 fun AppLayout() {
@@ -68,6 +166,7 @@ fun AppLayout() {
         topBar = { MyAppBar() },
         content = { innerPadding ->
             BodyContent(Modifier.padding(innerPadding))
+            AssistInstallDialog()
         }
     )
 }
@@ -217,7 +316,15 @@ fun ApkItem(modifier: Modifier = Modifier, apkInfo: ApkInfo) {
                     Text(text = stringResource(id = R.string.item_btn_install))
                 }
 
-                TextButton(onClick = { startApp(apkInfo) }) {
+                TextButton(onClick = {
+                    if (TextUtils.equals(BuildConfig.ASSIST_PACKAGE, apkInfo.getShellPackage())) {
+                        if (!isInstall(apkInfo)) {
+                            dialogState.value = apkInfo
+                            return@TextButton
+                        }
+                    }
+                    startApp(apkInfo)
+                }) {
                     Text(
                         text = stringResource(id = R.string.item_btn_start),
                         color = MaterialTheme.colors.secondary
@@ -291,6 +398,16 @@ class ApkInfo constructor(val apkPath: String, val sysInstalled: Boolean) {
     lateinit var bitmap: ImageBitmap
     //系统app，比如通讯录，设置，相机等，暂不支持
     var sysApp: Boolean = false
+    var extras: Bundle? = null
+
+
+    fun getShellPackage():String{
+        if (extras == null) {
+            extras = HackApi.getPackageSetting(pkgName,userSpace, 0)
+        }
+        val assist: Boolean? = extras?.getBoolean(CmdConstants.PKG_SET_REQUEST_ASSISTANT, false)
+        return if (assist != null && assist) BuildConfig.ASSIST_PACKAGE else BuildConfig.MASTER_PACKAGE
+    }
 
     fun init(context: Context, pkg: String?) {
         val pm = context.packageManager
