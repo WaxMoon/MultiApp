@@ -4,6 +4,9 @@
 ![](https://img.shields.io/badge/Android-7.0%20--%2013-blue.svg?style=flat)
 ![](https://img.shields.io/badge/arch-armeabi--v7a%20%7C%20arm64--v8a-blue.svg?style=flat)
 
+## 电报群
+https://t.me/xunijun
+
 ## 维护情况
 
 该仓库大概一星期更新一次，请留意文末的更新日志
