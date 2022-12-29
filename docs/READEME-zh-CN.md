@@ -4,8 +4,8 @@
 ![](https://img.shields.io/badge/Android-7.0%20--%2013-blue.svg?style=flat)
 ![](https://img.shields.io/badge/arch-armeabi--v7a%20%7C%20arm64--v8a-blue.svg?style=flat)
 
-## 电报群
-https://t.me/xunijun
+## whatsapp群组
+![image](res/multiapp_whatsapp.png)
 
 ## 维护情况
 
@@ -287,3 +287,6 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 13.修复paltalk崩溃
 
 14.支持Application lifecycle callback(HackApi.registerApplicationCallback)
+
+15.支持中国地区使用tiktok
+
