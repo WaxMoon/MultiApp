@@ -169,6 +169,27 @@ var install: (ApkInfo)->Unit = { apkInfo ->
 }
 ```
 
+### You can also call HackApi.installApkFiles to install apk with apk file path
+
+```Java
+    /**
+     * install the apk/apks that is not installed on the system.
+     * @param apkPathOrDir if this app is a full apk file, apkPathOrDir should pass an absolute path,
+     *                     such as /sdcard/com.xx.yy/com.xx.yy.apk;
+     *
+     *                     if this app is split apk files, apkPathOrDir should pass the directory
+     *                     containing all the apk files for this app, such as /sdcard/com.xx.yy/,
+     *                     and this directory can't contain apk files that do not belong to the current app.
+     *
+     * @param userId
+     * @param forceInstall
+     * @return public static final int INSTALL_SUCCEEDED = 1;
+     */
+    public static int installApkFiles(String apkPathOrDir, int userId, boolean forceInstall) {
+        ...
+    }
+```
+
 ### Use HackApi.startActivity to run app
 
 ```Kotlin
