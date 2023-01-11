@@ -278,6 +278,27 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 新浪邮箱:cocos_sh@sina.com
 
 ## 维护日志
+### 2023/1
+1.解决部分手机无响应
+
+2.优化provider隔离
+
+3.修复snapchat崩溃
+
+4.解决tiktok中国用户无法拉取视频
+
+5.解决应用崩溃无限重启
+
+6.解决Google play crash
+
+7.解决firefox崩溃
+
+8.解决finishActivity失败
+
+9.解决部落冲突免安装模式崩溃
+
+10.适配小米、联想机型
+
 
 ### 2022/12
 

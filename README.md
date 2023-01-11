@@ -269,6 +269,27 @@ Wechat: WaxMoon2018
 Email: cocos_sh@sina.com
 
 ## Change Log
+### 2023/1
+1.fix not response on some device
+
+2.isolate provider
+
+3.fix snapchat crash
+
+4.fix Chinese users of tiktok cannot pull videos
+
+5.fix app restart when crash
+
+6.fix Google play crash
+
+7.fix firefox crash
+
+8.solve finishActivity fail
+
+9.fix coc crash when alone mode
+
+10.fix some other issues on xiaomi/motorola device
+
 
 ### 2022/12
 

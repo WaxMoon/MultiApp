@@ -3,7 +3,6 @@
     package="org.waxmoon"
     android:sharedUserId="org.waxmoon.github">
 
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <!--高危权限-->
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
@@ -117,6 +116,7 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true">
+        <meta-data android:name="metadata.master.pkg" android:value="${masterPkg}"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
