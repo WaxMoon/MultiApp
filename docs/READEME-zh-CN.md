@@ -278,6 +278,23 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 新浪邮箱:cocos_sh@sina.com
 
 ## 维护日志
+### 2023/2
+1.修复部分软件谷歌登录失败
+
+2.修复权限检测异常
+
+3.修复pococha不能通过facebook登录
+
+4.修复广播receiver问题
+
+5.修复youtube崩溃
+
+6.修复app获取签名为空
+
+7.支持设备伪装，比如android_id
+
+8.添加接口-杀死运行中的多开应用HackApi.killApplication
+
 ### 2023/1
 1.解决部分手机无响应
 
@@ -285,19 +302,17 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 
 3.修复snapchat崩溃
 
-4.解决tiktok中国用户无法拉取视频
+4.解决应用崩溃无限重启
 
-5.解决应用崩溃无限重启
+5.解决Google play crash
 
-6.解决Google play crash
+6.解决firefox崩溃
 
-7.解决firefox崩溃
+7.解决finishActivity失败
 
-8.解决finishActivity失败
+8.解决部落冲突免安装模式崩溃
 
-9.解决部落冲突免安装模式崩溃
-
-10.适配小米、联想机型
+9.适配小米、联想机型
 
 
 ### 2022/12
@@ -329,6 +344,4 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 13.修复paltalk崩溃
 
 14.支持Application lifecycle callback(HackApi.registerApplicationCallback)
-
-15.支持中国地区使用tiktok
 

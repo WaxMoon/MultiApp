@@ -269,6 +269,19 @@ Wechat: WaxMoon2018
 Email: cocos_sh@sina.com
 
 ## Change Log
+### 2023/2
+1.fix Google play login issue
+
+2.fix permission check issue
+
+3.fix pococha can't login with facebook
+
+4.fix receiver issue
+5.fix youtube crash
+6.fix App's PackageInfo signature null
+7.enable DeviceInfo fake, such as android_id
+8.add HackApi.killApplication
+
 ### 2023/1
 1.fix not response on some device
 
@@ -276,19 +289,17 @@ Email: cocos_sh@sina.com
 
 3.fix snapchat crash
 
-4.fix Chinese users of tiktok cannot pull videos
+4.fix app restart when crash
 
-5.fix app restart when crash
+5.fix Google play crash
 
-6.fix Google play crash
+6.fix firefox crash
 
-7.fix firefox crash
+7.solve finishActivity fail
 
-8.solve finishActivity fail
+8.fix coc crash when alone mode
 
-9.fix coc crash when alone mode
-
-10.fix some other issues on xiaomi/motorola device
+9.fix some other issues on xiaomi/motorola device
 
 
 ### 2022/12
@@ -320,5 +331,3 @@ Email: cocos_sh@sina.com
 13.fix paltalk crash
 
 14.support Application lifecycle callback(HackApi.registerApplicationCallback)
-
-15.support tiktok
