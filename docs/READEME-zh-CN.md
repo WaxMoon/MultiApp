@@ -4,8 +4,8 @@
 ![](https://img.shields.io/badge/Android-7.0%20--%2013-blue.svg?style=flat)
 ![](https://img.shields.io/badge/arch-armeabi--v7a%20%7C%20arm64--v8a-blue.svg?style=flat)
 
-## whatsapp群组
-![image](res/multiapp_whatsapp.png)
+## 微信群组
+请先加微信：WaxMoon2018
 
 ## 维护情况
 
@@ -294,6 +294,18 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 7.支持设备伪装，比如android_id
 
 8.添加接口-杀死运行中的多开应用HackApi.killApplication
+
+9.修复一加机型crash
+
+10.修复三星机型崩溃
+
+11.优化谷歌套件的访问逻辑
+
+12.修复mobile legends游戏登录问题
+
+13.修复tiktok发布视频崩溃
+
+14.修复32位机型套件安装以及crash
 
 ### 2023/1
 1.解决部分手机无响应

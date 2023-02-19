@@ -27,9 +27,9 @@ ext {
     abiFilters = "armeabi-v7a,arm64-v8a"
     localTest = false
     isMasterPkg = true
-    hackJarName = "hack.jar"
-    versionCode = 1006
-    versionName = "1.0.6"
+    hackJarName = "moon.jar"
+    versionCode = 1007
+    versionName = "1.0.7"
     masterPkg = "org.waxmoon.github64"
     assistPkg = "org.waxmoon.github32"
 }

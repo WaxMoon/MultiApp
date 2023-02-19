@@ -6,8 +6,8 @@
 
 [中文](docs/READEME-zh-CN.md)
 
-## whatsapp group
-![image](docs/res/multiapp_whatsapp.png)
+## Telegram
+https://t.me/xunijun
 
 ## Project Introduction
 MultiApp is a virtual Android container, which can open more apps. This project provides a simple UI for you to experience. You can also download the official apk from [Google play](https://play.google.com/store/apps/details?id=com.waxmoon.ma.gp) to enjoy a better experience. If you are an android developer, you can also customize your own UI. You don't need to pay attention to the technical details that are difficult to understand. You can use the api provided by [opensdk](https://github.com/WaxMoon/opensdk) to open more apps. If you have any questions during the experience, you can contact us by WeChat.
@@ -228,6 +228,7 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
                 Slog.d(TAG, "onAttachBaseContext %s", app);
             }
 
+            @Deprecated
             @Override
             public void onInstallProviders(Application app) {
                 Slog.d(TAG, "onInstallProviders %s", app);
@@ -277,10 +278,26 @@ Email: cocos_sh@sina.com
 3.fix pococha can't login with facebook
 
 4.fix receiver issue
+
 5.fix youtube crash
+
 6.fix App's PackageInfo signature null
+
 7.enable DeviceInfo fake, such as android_id
+
 8.add HackApi.killApplication
+
+9.fix OnePlus device crash
+
+10.fix samsung device crash
+
+11.optimize Google suite access logic
+
+12.fix mobile legends login issue
+
+13.fix tiktok crash when send video
+
+14.fix 32bit runtime crash
 
 ### 2023/1
 1.fix not response on some device

@@ -23,7 +23,7 @@ android {
     buildTypes {
         release {
             aaptOptions {
-                ignoreAssetsPattern '!com.waxmoon.ma.gp.apk:!hack.jar'
+                ignoreAssetsPattern '!com.waxmoon.ma.gp.apk:!moon.jar'
             }
             signingConfig signingConfigs.debug
             signingConfig.initWith(buildTypes.debug.signingConfig)
