@@ -28,8 +28,8 @@ ext {
     localTest = false
     isMasterPkg = true
     hackJarName = "moon.jar"
-    versionCode = 1007
-    versionName = "1.0.7"
+    versionCode = 1008
+    versionName = "1.0.8"
     masterPkg = "org.waxmoon.github64"
     assistPkg = "org.waxmoon.github32"
 }
