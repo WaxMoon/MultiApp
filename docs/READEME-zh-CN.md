@@ -16,6 +16,10 @@ MultiApp是一款虚拟安卓容器，可实现app多开，该工程提供了一
 
 另外，团队会持续修复问题以及更新opensdk，为您提供最佳的体验。
 
+## 最佳实践
+
+你可能需要到这个[项目仓库]((https://github.com/WaxMoon/MultiAppDemo))，下载并学习基本的代码
+
 ### **您可以观看如下视频了解我们的功能**
 
 [免安装google play](https://github.com/WaxMoon/MultiApp/blob/5fc33308ca9fd651ce7be2a5bab53160d5303426/docs/res/github_gp.mp4) <----> [多开facebook](https://github.com/WaxMoon/MultiApp/blob/5fc33308ca9fd651ce7be2a5bab53160d5303426/docs/res/github_fb.mp4)
@@ -306,6 +310,12 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 13.修复tiktok发布视频崩溃
 
 14.修复32位机型套件安装以及crash
+
+15.优化app的启动速度
+
+16.修复startActivity问题
+
+17.添加CMD_QUICK_START_ACTIVITY
 
 ### 2023/1
 1.解决部分手机无响应

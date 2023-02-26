@@ -14,6 +14,10 @@ MultiApp is a virtual Android container, which can open more apps. This project 
 
 In addition, we will continue to fix problems and update opensdk code to provide you with the best experience.
 
+## Best practice
+
+Maybe you can goto [here](https://github.com/WaxMoon/MultiAppDemo) and download code
+
 ### **You can watch the following videos to understand our capabilities**
 
 [Without install Google play to enjoy](https://github.com/WaxMoon/MultiApp/blob/5fc33308ca9fd651ce7be2a5bab53160d5303426/docs/res/github_gp.mp4) <----> [Multiple open facebook](https://github.com/WaxMoon/MultiApp/blob/5fc33308ca9fd651ce7be2a5bab53160d5303426/docs/res/github_fb.mp4)
@@ -298,6 +302,12 @@ Email: cocos_sh@sina.com
 13.fix tiktok crash when send video
 
 14.fix 32bit runtime crash
+
+15.optimize app startup speed
+
+16.fix startActivity issue
+
+17.add CMD_QUICK_START_ACTIVITY
 
 ### 2023/1
 1.fix not response on some device
