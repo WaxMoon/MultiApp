@@ -282,6 +282,19 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 新浪邮箱:cocos_sh@sina.com
 
 ## 维护日志
+### 2023/3
+1.修复twitter白屏
+
+2.修复messenger免安装偶现崩溃
+
+3.修复后台GP的binder崩溃
+
+4.修复chrominum免安装崩溃
+
+5.修复知乎有时候不能查看文章
+
+6.优化进程启动速度
+
 ### 2023/2
 1.修复部分软件谷歌登录失败
 

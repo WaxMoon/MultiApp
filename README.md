@@ -274,6 +274,19 @@ Wechat: WaxMoon2018
 Email: cocos_sh@sina.com
 
 ## Change Log
+### 2023/3
+1.fix twitter white screen
+
+2.fix messenger crash
+
+3.fix GP crash on Android11-13
+
+4.fix chrominum crash when alone mode
+
+5.fix zhihu cant view article
+
+6.optimize process start speed
+
 ### 2023/2
 1.fix Google play login issue
 
