@@ -18,7 +18,7 @@ MultiApp是一款虚拟安卓容器，可实现app多开，该工程提供了一
 
 ## 最佳实践
 
-你可能需要到这个[项目仓库]((https://github.com/WaxMoon/MultiAppDemo))，下载并学习基本的代码
+你可能需要到这个[项目仓库](https://github.com/WaxMoon/MultiAppDemo)，下载并学习基本的代码
 
 ### **您可以观看如下视频了解我们的功能**
 
