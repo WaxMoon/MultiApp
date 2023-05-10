@@ -1,7 +1,7 @@
 # MultiApp
 
 ![](https://img.shields.io/badge/license-AGPL3.0-brightgreen.svg?style=flat)
-![](https://img.shields.io/badge/Android-7.0%20--%2013-blue.svg?style=flat)
+![](https://img.shields.io/badge/Android-6.0%20--%2013-blue.svg?style=flat)
 ![](https://img.shields.io/badge/arch-armeabi--v7a%20%7C%20arm64--v8a-blue.svg?style=flat)
 
 [中文](docs/READEME-zh-CN.md)
@@ -247,7 +247,7 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 ```
 
 ## Features
-*  support android7-android13(android7-8 is under development)
+*  support android6-android13
 *  support armv7-32, armv8-64
 *  provide master pkg/assist pkg
 *  support google play
@@ -274,6 +274,13 @@ Wechat: WaxMoon2018
 Email: cocos_sh@sina.com
 
 ## Change Log
+### 2023/5
+1.support android6.0-8.1
+
+2.fix 32-bit app can't launch
+
+3.fix some crashes
+
 ### 2023/3
 1.fix twitter white screen
 

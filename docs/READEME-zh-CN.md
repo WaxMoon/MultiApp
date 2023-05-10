@@ -1,7 +1,7 @@
 # MultiApp
 
 ![](https://img.shields.io/badge/license-AGPL3.0-brightgreen.svg?style=flat)
-![](https://img.shields.io/badge/Android-7.0%20--%2013-blue.svg?style=flat)
+![](https://img.shields.io/badge/Android-6.0%20--%2013-blue.svg?style=flat)
 ![](https://img.shields.io/badge/arch-armeabi--v7a%20%7C%20arm64--v8a-blue.svg?style=flat)
 
 ## 微信群组
@@ -254,7 +254,7 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 ```
 
 ## 功能特性
-*  支持android7-android13(android7-8还在测试中，敬请谅解)
+*  支持android6-android13
 *  支持armv7-32, armv8-64
 *  主包/辅包
 *  支持google play
@@ -282,6 +282,13 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 新浪邮箱:cocos_sh@sina.com
 
 ## 维护日志
+### 2023/5
+1.支持android6.0-8.1
+
+2.修复32位应用无法启动
+
+3.修复一些crash
+
 ### 2023/3
 1.修复twitter白屏
 

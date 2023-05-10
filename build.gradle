@@ -19,7 +19,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    minSdkVersion = 24
+    minSdkVersion = 23
     compileSdkVersion = 33
     targetSdkVersion = 26
     buildToolsVersion = "31.0.0"
@@ -28,8 +28,8 @@ ext {
     localTest = false
     isMasterPkg = true
     hackJarName = "moon.jar"
-    versionCode = 1009
-    versionName = "1.0.9"
+    versionCode = 1010
+    versionName = "1.0.10"
     masterPkg = "org.waxmoon.github64"
     assistPkg = "org.waxmoon.github32"
 }
