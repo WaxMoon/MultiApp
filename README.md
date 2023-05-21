@@ -6,7 +6,25 @@
 
 [中文](docs/READEME-zh-CN.md)
 
-## Telegram
+## About us
+
+### Our official product
+
+[PlayBox](docs/res/playbox.apk)
+
+PlayBox has its own Google service framework, providing you with an independent operating environment to play Google Play games and applications. You can watch the product video on [youtube](https://www.youtube.com/@PlayBoxSupport)
+
+1.PlayBox is suitable for all major brands of mobile phone systems, such as Xiaomi, Samsung, Huawei, OPPO, VIVO, etc., and supports Android 7-14;
+
+2.Built-in Google Play suite, unlimited play of high-quality games and applications at home and abroad;
+
+3.Independent virtual environment, not limited by the system, simple, stable and efficient.
+
+[GooglePlay MultiApp](https://play.google.com/store/apps/details?id=com.waxmoon.ma.gp)
+
+This is a simple and easy-to-use and free Android multi-opening assistant, which can use multiple identical applications and run multiple accounts on one mobile phone, including: whatsapp, facebook, instagram, WeChat, etc.
+
+### Telegram
 https://t.me/xunijun
 
 ## Project Introduction
@@ -280,6 +298,10 @@ Email: cocos_sh@sina.com
 2.fix 32-bit app can't launch
 
 3.fix some crashes
+
+4.fix anr
+
+5.[support ActivityOptions](https://github.com/WaxMoon/MultiApp/issues/29)
 
 ### 2023/3
 1.fix twitter white screen

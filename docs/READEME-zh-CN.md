@@ -4,7 +4,26 @@
 ![](https://img.shields.io/badge/Android-6.0%20--%2013-blue.svg?style=flat)
 ![](https://img.shields.io/badge/arch-armeabi--v7a%20%7C%20arm64--v8a-blue.svg?style=flat)
 
-## 微信群组
+
+## 关于我们
+
+### 下面是我们团队的产品
+
+#### [PlayBox](res/playbox.apk)
+这是一款自带谷歌服务框架的免安装神器，为您提供独立的运行环境，畅玩Google Play游戏与应用。您可以在[youtube观看产品视频](https://www.youtube.com/@PlayBoxSupport)
+
+1：PlayBox适用于各大品牌手机系统，小米，三星，华为，OPPO，VIVO等，支持Android 7-14；
+
+2：内置Google Play套件，无限畅玩国内外优质游戏与应用；
+
+3：独立虚拟环境，不受系统限制，简单稳定高效.
+
+#### [GooglePlay MultiApp](res/MultiApp-GooglePlay.apk)
+这是一款简洁易用并且免费的安卓多开助手，可以在一台手机上使用多个相同的应用程序并运行多个账户，包括: whatsapp、facebook、instagram、微信等
+
+
+### 微信群组
+
 请先加微信：WaxMoon2018
 
 ## 维护情况
@@ -288,6 +307,10 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 2.修复32位应用无法启动
 
 3.修复一些crash
+
+4.优化程序无响应
+
+5.[支持ActivityOptions](https://github.com/WaxMoon/MultiApp/issues/29)
 
 ### 2023/3
 1.修复twitter白屏
