@@ -10,9 +10,9 @@
 
 ### Our official product
 
-[PlayBox](docs/res/playbox.apk)
+[PlayBox](https://github.com/WaxMoon/MultiApp/releases/download/v1.0.1/playbox.apk)
 
-PlayBox has its own Google service framework, providing you with an independent operating environment to play Google Play games and applications. You can watch the product video on [youtube](https://www.youtube.com/@PlayBoxSupport)
+PlayBox has its own Google service framework, providing you with an independent operating environment to play Google Play games and applications.
 
 1.PlayBox is suitable for all major brands of mobile phone systems, such as Xiaomi, Samsung, Huawei, OPPO, VIVO, etc., and supports Android 7-14;
 

@@ -9,8 +9,8 @@
 
 ### 下面是我们团队的产品
 
-#### [PlayBox](res/playbox.apk)
-这是一款自带谷歌服务框架的免安装神器，为您提供独立的运行环境，畅玩Google Play游戏与应用。您可以在[youtube观看产品视频](https://www.youtube.com/@PlayBoxSupport)
+#### [PlayBox](https://github.com/WaxMoon/MultiApp/releases/download/v1.0.1/playbox.apk)
+这是一款自带谷歌服务框架的免安装神器，为您提供独立的运行环境，畅玩Google Play游戏与应用。
 
 1：PlayBox适用于各大品牌手机系统，小米，三星，华为，OPPO，VIVO等，支持Android 7-14；
 
