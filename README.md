@@ -292,6 +292,11 @@ Wechat: WaxMoon2018
 Email: cocos_sh@sina.com
 
 ## Change Log
+### 2023/8
+1.support android6.0-14.0
+
+2.fix some crashes
+
 ### 2023/5
 1.support android6.0-8.1
 

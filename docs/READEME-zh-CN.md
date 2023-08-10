@@ -28,7 +28,7 @@
 
 ## 维护情况
 
-该仓库大概一星期更新一次，请留意文末的更新日志
+该仓库大概一个月更新一次，请留意文末的更新日志
 
 ## 项目简介
 MultiApp是一款虚拟安卓容器，可实现app多开，该工程提供了一个简易的UI供您体验，您也可以下载[官网安装包](https://play.google.com/store/apps/details?id=com.waxmoon.ma.gp)享受更流畅的体验。如果您是一个android开发者，也可以自已定制UI，您不用关注底层的实现细节，使用[opensdk](https://github.com/WaxMoon/opensdk)提供的api即可实现app多开。如果您在体验过程中有任何问题，可直接咨询微信账号。
@@ -301,6 +301,11 @@ var startApp: (ApkInfo)->Unit = { apkInfo ->
 新浪邮箱:cocos_sh@sina.com
 
 ## 维护日志
+### 2023/8
+1.支持android6.0-14.0
+
+2.同步修复线上崩溃问题
+
 ### 2023/5
 1.支持android6.0-8.1
 
