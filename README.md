@@ -6,6 +6,9 @@
 
 [中文](docs/READEME-zh-CN.md)
 
+## Business Warning
+Over a long period of time in the past, through user feedback, servers, internet safety departments and other channels, we have discovered a variety of cheat software that seriously infringed on commercialization and Internet security. We have emphasized industry security from the beginning and prohibited illegal uses. From today on, github will no longer be maintained. If you need to use multi-open software, please download from [GooglePlay Store](https://play.google.com/store/apps/details?id=com.waxmoon.ma.gp). For business cooperation, please contact the only legal WeChat: WaxMoon2018
+
 ## About us
 
 ### Our official product
