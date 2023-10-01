@@ -6,7 +6,7 @@
 
 ## 严重警告
 在过去的很长一段时间，我们通过用户反馈、服务器、公关部门等多种渠道，发现了多款外挂助手软件，严重侵犯了商业化与互联网安全。我们从一开始就强调行业安全，禁止非法用途，从今天开始github不再维护，有需要使用多开软件的朋友，请在
-[GooglePlay商店]((https://play.google.com/store/apps/details?id=com.waxmoon.ma.gp))下载使用。商业合作请联系唯一合法微信:WaxMoon2018
+[GooglePlay商店](https://play.google.com/store/apps/details?id=com.waxmoon.ma.gp)下载使用。商业合作请联系唯一合法微信:WaxMoon2018
 ## 关于我们
 
 ### 下面是我们团队的产品
