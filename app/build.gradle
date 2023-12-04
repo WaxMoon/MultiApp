@@ -1,24 +1,30 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
+    namespace 'com.alex.pro'
     compileSdk rootProject.ext.compileSdkVersion
-
+    buildFeatures.buildConfig = true
+    lintOptions {
+        checkReleaseBuilds true
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        textOutput "stdout"
+        textReport false
+        disable "UnusedResources", 'RestrictedApi'
+        disable 'TypographyFractions', 'TypographyQuotes'
+        enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
+        checkOnly 'NewApi', 'InlinedApi'
+    }
     defaultConfig {
-        if (rootProject.ext.isMasterPkg) {
-            applicationId rootProject.ext.masterPkg
-            manifestPlaceholders = [label: "Waxmoon"]
-        } else {
-            applicationId rootProject.ext.assistPkg
-            manifestPlaceholders = [label: "Waxmoon32"]
-            ndk.abiFilters 'armeabi-v7a'
-        }
+        applicationId "com.alex.pro"
         minSdk rootProject.ext.minSdkVersion
         targetSdk rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -49,29 +55,14 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion kotlin_version
+        kotlinCompilerExtensionVersion '1.5.1'
     }
-    packagingOptions {
+    packaging {
         resources {
-            excludes += '/META-INF/*'
-        }
-        jniLibs {
-            useLegacyPackaging = true
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
-    lintOptions {
-        checkReleaseBuilds true
-        quiet true
-        abortOnError false
-        ignoreWarnings true
-        textOutput "stdout"
-        textReport false
-        disable "UnusedResources", 'RestrictedApi'
-        disable 'TypographyFractions', 'TypographyQuotes'
-        enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
-        check 'NewApi', 'InlinedApi'
-    }
+
 }
 
 tasks.withType(Javadoc) {
@@ -82,6 +73,11 @@ tasks.withType(Javadoc) {
 }
 
 dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+   implementation project(path: ':opensdk')
+
+
+   // compose
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
@@ -96,6 +92,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
-
-    implementation project(path: ':opensdk')
 }

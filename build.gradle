@@ -1,30 +1,20 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    ext {
-        kotlin_version = '1.5.21'
-        compose_version = '1.0.1'
-    }
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle:7.0.2"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+plugins {
+id 'com.android.application' version '8.2.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
 }
 
 ext {
+    kotlin_version = '1.5.21'
+    compose_version = '1.0.1'
+}
+ext {
     minSdkVersion = 23
-    compileSdkVersion = 33
+    compileSdkVersion = 34
     targetSdkVersion = 26
-    buildToolsVersion = "31.0.0"
+    buildToolsVersion = "34.0.0"
     javaVersion = JavaVersion.VERSION_1_8
-    abiFilters = "armeabi-v7a,arm64-v8a"
+    abiFilters = "arm64-v8a"
     localTest = false
     isMasterPkg = true
     hackJarName = "moon.jar"

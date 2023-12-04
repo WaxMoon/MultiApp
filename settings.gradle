@@ -1,12 +1,17 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "GithubMultiApp"
-include ':app'
-include ':opensdk'
-include ':assist'
+
+rootProject.name = "composify"
+include ':app' , ':opensdk' , ':assist'

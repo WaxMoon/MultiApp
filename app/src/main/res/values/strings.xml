@@ -17,4 +17,5 @@
     <string name="toast_unsupport" tools:ignore="MissingTranslation">not support</string>
     <string name="toast_assist_missing" tools:ignore="MissingTranslation">assist not install</string>
     <string name="toast_already_installed" translatable="false">already installed</string>
+    <string name="app_name">haha</string>
 </resources>

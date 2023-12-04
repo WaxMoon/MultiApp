@@ -4,16 +4,22 @@ plugins {
 
 android {
     compileSdk rootProject.ext.compileSdkVersion
-
+    namespace = "org.waxmoon.github"
 
     defaultConfig {
+
         applicationId rootProject.ext.assistPkg
+
         minSdk rootProject.ext.minSdkVersion
+
         targetSdk rootProject.ext.targetSdkVersion
+
         versionCode rootProject.ext.versionCode
+
         versionName rootProject.ext.versionName
 
-        ndk.abiFilters 'armeabi-v7a'
+        //noinspection ChromeOsAbiSupport
+        ndk.abiFilters rootProject.ext.abiFilters
 
         if (!rootProject.ext.isMasterPkg) {
             manifestPlaceholders = [masterPkg: "${rootProject.ext.masterPkg}"]
