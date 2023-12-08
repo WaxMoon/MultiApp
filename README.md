@@ -13,7 +13,7 @@ Over a long period of time in the past, through user feedback, servers, internet
 
 ### Our official product
 
-[PlayBox](https://github.com/WaxMoon/MultiApp/releases/download/v1.0.1/playbox.apk)
+[PlayBox](https://github.com/WaxMoon/MultiApp/releases/download/v1.0.2/playbox.apk)
 
 PlayBox has its own Google service framework, providing you with an independent operating environment to play Google Play games and applications.
 
